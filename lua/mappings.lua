@@ -41,3 +41,10 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- for tmux navigation
+vim.keymap.set({ 'n', 'x' }, '<c-h>', '<cmd>TmuxNavigateLeft<cr>')
+vim.keymap.set({ 'n', 'x' }, '<c-j>', '<cmd>TmuxNavigateDown<cr>')
+vim.keymap.set({ 'n', 'x' }, '<c-k>', '<cmd>TmuxNavigateUp<cr>')
+vim.keymap.set({ 'n', 'x' }, '<c-l>', '<cmd>TmuxNavigateRight<cr>')
+vim.keymap.set({ 'n', 'x' }, '<c-\\>', '<cmd>TmuxNavigatePrevious<cr>')
