@@ -16,5 +16,5 @@ return {
   keys = {
     { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
   },
-  lazy = 'VeryLazy',
+  lazy = false,
 }
