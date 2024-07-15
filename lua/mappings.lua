@@ -9,8 +9,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', 'jk', '<Esc>')
 -- Remapping semi colon to colon
 vim.keymap.set({ 'n', 'x' }, '', '<c-^>', { desc = 'previous buffer' })
-vim.keymap.set('n', ';', ':', { desc = 'enter command mode' })
-vim.keymap.set('i', 'jk', '<ESC>')
+vim.keymap.set({ 'n', 'x' }, ';', '<cmd>FineCmdline<cr>', { desc = 'enter FineCmdline mode', silent = true })
+-- vim.keymap.set({ 'n', 'x' }, ':', '<cmd>FineCmdline<cr>', { noremap = true, desc = 'enter FineCmdline mode', silent = true })
 vim.keymap.set({ 'n', 'x' }, '<leader>c', '<cmd>normal ~<cr>', { desc = 'toggle case' }) -- normal mode toggling of char case
 vim.keymap.set({ 'n', 'x' }, '<leader>\\', '<cmd>vsp<cr>', { desc = 'open vertical split' }) -- normal mode toggling of char case
 vim.keymap.set({ 'n', 'x' }, '<leader>/', '<cmd>normal gcc<cr>', { desc = 'toggle comment' }) -- normal mode toggling of char case
@@ -18,12 +18,13 @@ vim.keymap.set('n', '<leader>fe', '<cmd>Neotree toggle<cr>', { desc = 'open Neot
 vim.keymap.set('n', '<c-g>', '<cmd>Neotree float git_status<cr>', { desc = 'open git_status on floaring Neotree' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = 'open TODOs in Telescope' })
 vim.keymap.set('n', '<leader>th', '<cmd>Telescope colorscheme<cr>', { desc = 'view available colorschemes/themes' })
+vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
