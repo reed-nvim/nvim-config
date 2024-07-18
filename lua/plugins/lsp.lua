@@ -81,7 +81,7 @@ return { -- LSP Configuration & Plugins
         --  Similar to document symbols, except searches over your entire project.
         map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-        -- map('<leader>ic', require('telescope.builtin').lsp_incoming_calls, '[I]ncoming [C]alls')
+        map('<leader>ic', require('telescope.builtin').lsp_incoming_calls, '[I]ncoming [C]alls')
         -- map('<leader>oc', require('telescope.builtin').lsp_outgoing_calls, '[O]utgoing [C]alls')
         -- map('n', '<leader>e', vim.diagnostic.open_float)
         -- map('n', '[d', vim.diagnostic.goto_prev)

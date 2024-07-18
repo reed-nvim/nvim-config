@@ -63,4 +63,3 @@ require('lazy').setup {
 require 'options' --setup options
 require 'mappings' --setup custom mappings
 require 'autocmds'
-require 'dap-config'

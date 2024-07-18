@@ -5,7 +5,7 @@ return {
   config = function()
     require('toggleterm').setup {
       -- Configuration here, or leave empty to use defaults
-      open_mapping = [[<c-a>]],
+      -- open_mapping = [[<leader>t]],
       start_in_insert = true,
       direction = 'float',
       float_opts = {

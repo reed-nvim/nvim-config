@@ -1,22 +1,22 @@
 -- [[NOTE: Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 -- Quick move back to insert mode
 vim.keymap.set('i', 'jk', '<Esc>')
 -- Remapping semi colon to colon
-vim.keymap.set({ 'n', 'x' }, '', '<c-^>', { desc = 'previous buffer' })
+vim.keymap.set({ 'n', 'x' }, '<leader>=', '<c-a>', { desc = 'increment number' }) -- remapping the incr and decr key maps to something more intuitive
+vim.keymap.set({ 'n', 'x' }, '<leader>-', '<c-x>', { desc = 'decrement number' }) -- remapping the incr and decr key maps to something more intuitive
 vim.keymap.set({ 'n', 'x' }, ';', '<cmd>FineCmdline<cr>', { desc = 'enter FineCmdline mode', silent = true })
--- vim.keymap.set({ 'n', 'x' }, ':', '<cmd>FineCmdline<cr>', { noremap = true, desc = 'enter FineCmdline mode', silent = true })
+vim.keymap.set({ 'n', 'x' }, '', '<c-^>', { desc = 'previous buffer' })
 vim.keymap.set({ 'n', 'x' }, '<leader>c', '<cmd>normal ~<cr>', { desc = 'toggle case' }) -- normal mode toggling of char case
 vim.keymap.set({ 'n', 'x' }, '<leader>\\', '<cmd>vsp<cr>', { desc = 'open vertical split' }) -- normal mode toggling of char case
 vim.keymap.set({ 'n', 'x' }, '<leader>/', '<cmd>normal gcc<cr>', { desc = 'toggle comment' }) -- normal mode toggling of char case
 vim.keymap.set('n', '<leader>fe', '<cmd>Neotree toggle<cr>', { desc = 'open Neotree' })
 vim.keymap.set('n', '<c-g>', '<cmd>Neotree float git_status<cr>', { desc = 'open git_status on floaring Neotree' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = 'open TODOs in Telescope' })
+vim.keymap.set({ 'n', 'x' }, '<leader>t', '<cmd>ToggleTerm<cr>', { desc = 'open ToggleTerminal' })
 vim.keymap.set('n', '<leader>th', '<cmd>Telescope colorscheme<cr>', { desc = 'view available colorschemes/themes' })
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 
@@ -37,10 +37,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<c-h>', '<c-w><c-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<c-l>', '<c-w><c-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<c-j>', '<c-w><c-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<c-k>', '<c-w><c-k>', { desc = 'Move focus to the upper window' })
 
 -- for tmux navigation
 vim.keymap.set({ 'n', 'x' }, '<c-h>', '<cmd>TmuxNavigateLeft<cr>')
