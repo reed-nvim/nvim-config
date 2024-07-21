@@ -1,12 +1,20 @@
+-- allows for ease when commenting normal code as well as for JSX
 return {
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to force a plugin to be loaded.
-  --  This is equivalent to:
-  --    require('Comment').setup({})
-  -- "gc" to comment visual regions/lines
   'numToStr/Comment.nvim',
-  opts = {},
+  event = { 'BufReadPre', 'BufNewFile' },
+  dependencies = {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+  config = function()
+    -- import comment plugin safely
+    local comment = require 'Comment'
+
+    local ts_context_commentstring = require 'ts_context_commentstring.integrations.comment_nvim'
+
+    -- enable comment
+    comment.setup {
+      -- for commenting tsx, jsx, svelte, html files
+      pre_hook = ts_context_commentstring.create_pre_hook(),
+    }
+  end,
 }

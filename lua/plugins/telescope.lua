@@ -1,3 +1,19 @@
+-- Define custom highlights using Catppuccin colors
+local custom_highlights = function()
+  vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#2E3440', bg = '#2E3440' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { fg = '#2E3440', bg = '#2E3440' })
+  vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { fg = '#2E3440', bg = '#2E3440' })
+  vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { fg = '#2E3440', bg = '#2E3440' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { fg = '#D8DEE9', bg = '#3B4252' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', { fg = '#88C0D0', bg = '#3B4252' })
+  vim.api.nvim_set_hl(0, 'TelescopeNormal', { fg = '#ECEFF4', bg = '#2E3440' })
+  vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { fg = '#D8DEE9', bg = '#3B4252' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { fg = '#D8DEE9', bg = '#3B4252' })
+  vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { fg = '#D8DEE9', bg = '#3B4252' })
+  vim.api.nvim_set_hl(0, 'TelescopeSelection', { fg = '#ECEFF4', bg = '#4C566A' })
+  vim.api.nvim_set_hl(0, 'TelescopeMatching', { fg = '#88C0D0' })
+end
+
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -32,57 +48,10 @@ return {
       --  :Telescope help_tags
 
       -- [[ PERF: Configure Telescope ]]
-
-      -- Load Catppuccin colors
-      -- local catppuccin = require("catppuccin.palettes").get_palette()
-      -- Define custom highlights using Catppuccin colors
-      local custom_highlights = function()
-        -- vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#2E3440", bg = "#2E3440" })
-        -- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = "#2E3440", bg = "#2E3440" })
-        -- vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#88C0D0", bg = "#3B4252" })
-        -- vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = catppuccin.overlay1, bg = catppuccin.base })
-        -- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = catppuccin.overlay1, bg = catppuccin.overlay1 })
-        -- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = catppuccin.base, bg = catppuccin.base })
-        -- vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = catppuccin.text, bg = catppuccin.base })
-        -- vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = catppuccin.surface0, bg = catppuccin.green })
-        -- vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = catppuccin.surface0, bg = catppuccin.red })
-        -- vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = catppuccin.surface0, bg = catppuccin.blue })
-        -- vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = catppuccin.text, bg = catppuccin.overlay0 })
-        -- vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = catppuccin.yellow })
-
-        vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#2E3440', bg = '#2E3440' })
-        vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { fg = '#2E3440', bg = '#2E3440' })
-        vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { fg = '#2E3440', bg = '#2E3440' })
-        vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { fg = '#2E3440', bg = '#2E3440' })
-        vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { fg = '#D8DEE9', bg = '#3B4252' })
-        vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', { fg = '#88C0D0', bg = '#3B4252' })
-        vim.api.nvim_set_hl(0, 'TelescopeNormal', { fg = '#ECEFF4', bg = '#2E3440' })
-        vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { fg = '#D8DEE9', bg = '#3B4252' })
-        vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { fg = '#D8DEE9', bg = '#3B4252' })
-        vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { fg = '#D8DEE9', bg = '#3B4252' })
-        vim.api.nvim_set_hl(0, 'TelescopeSelection', { fg = '#ECEFF4', bg = '#4C566A' })
-        vim.api.nvim_set_hl(0, 'TelescopeMatching', { fg = '#88C0D0' })
-      end
-
-      -- Apply the custom highlights
-      custom_highlights()
-
-      -- telescope key binds
-      local map = vim.keymap.set
-      local builtin = require 'telescope.builtin'
-      map('n', '<leader>ff', builtin.find_files, {})
-      map('n', '<leader>fw', builtin.live_grep, {})
-      map('n', '<leader>fb', builtin.buffers, {})
-      map('n', '<leader>fh', builtin.help_tags, {})
       local actions = require 'telescope.actions'
 
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
-        -- extensions = {
-        --   ['ui-select'] = {
-        --     require('telescope.themes').get_dropdown(),
-        --   },
-        -- },
         defaults = {
           vimgrep_arguments = {
             'rg',
@@ -96,11 +65,12 @@ return {
           },
           initial_mode = 'insert',
           selection_strategy = 'reset',
-          sorting_strategy = 'ascending',
+          sorting_strategy = 'descending',
           layout_strategy = 'horizontal',
-          entry_prefix = '   ',
+          -- entry_prefix = '   ',
+          entry_prefix = ' -  ',
           prompt_prefix = '   ',
-          selection_caret = '   ',
+          selection_caret = ' 👉 ',
           -- Searching
           file_ignore_patterns = {
             '.git/',
@@ -124,7 +94,7 @@ return {
           },
           layout_config = {
             horizontal = {
-              prompt_position = 'top',
+              prompt_position = 'bottom',
               preview_width = 0.55,
               results_width = 0.8,
             },
@@ -139,7 +109,13 @@ return {
           generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
           path_display = { 'truncate' },
           winblend = 0,
+          -- Configure the border
           border = {},
+          borderchars = {
+            prompt = { '━', '┃', '━', '┃', '┏', '┓', '┛', '┗' },
+            results = { '━', '┃', '━', '┃', '┏', '┓', '┛', '┗' },
+            preview = { '━', '┃', '━', '┃', '┏', '┓', '┛', '┗' },
+          },
           color_devicons = true,
           set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
           file_previewer = require('telescope.previewers').vim_buffer_cat.new,
@@ -152,7 +128,11 @@ return {
           },
         },
         extensions_list = { 'themes', 'terms' },
-        extensions = {},
+        extensions = {
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
+          },
+        },
         pickers = {
           buffers = {
             mappings = {
@@ -171,18 +151,29 @@ return {
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
 
+      -- Set up autocommand to reapply custom highlights after colorscheme changes
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = custom_highlights,
+      })
+
       -- See `:help telescope.builtin`
-      -- local builtin = require 'telescope.builtin'
+      -- telescope key binds
+      local builtin = require 'telescope.builtin'
+      vim.keymap.set('n', '<leader>th', function()
+        builtin.colorscheme()
+        custom_highlights()
+      end, { desc = 'View available colorschemes/themes' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-      -- vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+      vim.keymap.set('n', '<leader>fe', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set({ 'n', 'x' }, '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = 'open TODOs in Telescope' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>fb', function()
@@ -204,6 +195,9 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Apply the custom highlights
+      custom_highlights()
     end,
   },
 
