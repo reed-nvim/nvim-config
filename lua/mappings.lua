@@ -19,9 +19,10 @@ vim.keymap.set({ 'n', 'x' }, '<leader>\\', ':vsp<cr>', { desc = 'open vertical s
 vim.keymap.set({ 'n', 'x' }, '<leader>/', ':normal gcc<cr>', { desc = 'toggle comment' }) -- normal mode toggling of char case
 
 -- Opening Neotree
-vim.keymap.set('n', '<leader>el', ':Neotree toggle left<cr>', { desc = 'open Neotree' })
+vim.keymap.set('n', '<leader>el', ':Neotree toggle left<cr>', { desc = 'open Neotree on the left' })
 vim.keymap.set('n', '<leader>ef', ':Neotree toggle float<cr>', { desc = 'open Neotree in float position' })
-vim.keymap.set('n', '<leader>eg', ':Neotree float git_status<cr>', { desc = 'open git_status on floaring Neotree' })
+vim.keymap.set('n', '<leader>eg', ':Neotree float git_status<cr>', { desc = 'open git_status in floating Neotree' })
+vim.keymap.set('n', '<leader>eb', ':Neotree toggle bottom<cr>', { desc = 'open Neotree from the bottom of the screen' })
 
 -- Opening LazyGit
 vim.keymap.set('n', '<leader>lg', ':LazyGit<cr>', { desc = 'LazyGit' })
