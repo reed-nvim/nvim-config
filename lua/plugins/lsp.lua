@@ -82,11 +82,8 @@ return { -- LSP Configuration & Plugins
         map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
         map('<leader>ic', require('telescope.builtin').lsp_incoming_calls, '[I]ncoming [C]alls')
-        -- map('<leader>oc', require('telescope.builtin').lsp_outgoing_calls, '[O]utgoing [C]alls')
-        -- map('n', '<leader>e', vim.diagnostic.open_float)
-        -- map('n', '[d', vim.diagnostic.goto_prev)
-        -- map('n', ']d', vim.diagnostic.goto_next)
-        -- map('n', '<leader>q', vim.diagnostic.setloclist)
+        map('<leader>oc', require('telescope.builtin').lsp_outgoing_calls, '[O]utgoing [C]alls')
+        -- map('n', '<leader>ee', vim.diagnostic.open_float)
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
@@ -162,17 +159,72 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      clangd = {},
-      gopls = {},
+      clangd = {
+        settings = {
+          InlayHints = {
+            Designators = true,
+            Enabled = true,
+            ParameterNames = true,
+            DeducedTypes = true,
+          },
+          fallbackFlags = { '-std=c++20' },
+        },
+      },
+      gopls = {
+        settings = {
+          usePlaceholders = true,
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gopls = {
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
+          },
+        },
+      },
       pyright = {},
-      -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
       -- Some languages (like typescript) have entire language plugins that can be useful:
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      tsserver = {},
+      tsserver = {
+        -- settings = {
+        -- typescript = {
+        -- inlayHints = {
+        -- includeInlayParameterNameHints = 'all',
+        -- includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        -- includeInlayFunctionParameterTypeHints = true,
+        -- includeInlayVariableTypeHints = true,
+        -- includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        -- includeInlayPropertyDeclarationTypeHints = true,
+        -- includeInlayFunctionLikeReturnTypeHints = true,
+        -- includeInlayEnumMemberValueHints = true,
+        -- },
+        -- },
+        -- javascript = {
+        -- inlayHints = {
+        -- includeInlayParameterNameHints = 'all',
+        -- includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        -- includeInlayFunctionParameterTypeHints = true,
+        -- includeInlayVariableTypeHints = true,
+        -- includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        -- includeInlayPropertyDeclarationTypeHints = true,
+        -- includeInlayFunctionLikeReturnTypeHints = true,
+        -- includeInlayEnumMemberValueHints = true,
+        -- },
+        -- },
+        -- },
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
@@ -182,11 +234,8 @@ return { -- LSP Configuration & Plugins
             completion = {
               callSnippet = 'Replace',
             },
-            gopls = {
-              usePlaceholders = true,
-              analyses = {
-                unusedparams = true,
-              },
+            hint = {
+              enable = true, -- necessary
             },
             -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
             -- diagnostics = { disable = { 'missing-fields' } },
