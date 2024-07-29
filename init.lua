@@ -63,3 +63,11 @@ require('lazy').setup {
 require 'options' --setup options
 require 'mappings' --setup custom mappings
 require 'autocmds'
+
+vim.cmd [[
+  augroup TransparentBG
+    autocmd!
+    autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
+    autocmd ColorScheme * highlight NonText guibg=NONE ctermbg=NONE
+  augroup END
+]]

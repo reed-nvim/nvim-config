@@ -198,32 +198,32 @@ return { -- LSP Configuration & Plugins
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       tsserver = {
-        -- settings = {
-        -- typescript = {
-        -- inlayHints = {
-        -- includeInlayParameterNameHints = 'all',
-        -- includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        -- includeInlayFunctionParameterTypeHints = true,
-        -- includeInlayVariableTypeHints = true,
-        -- includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-        -- includeInlayPropertyDeclarationTypeHints = true,
-        -- includeInlayFunctionLikeReturnTypeHints = true,
-        -- includeInlayEnumMemberValueHints = true,
-        -- },
-        -- },
-        -- javascript = {
-        -- inlayHints = {
-        -- includeInlayParameterNameHints = 'all',
-        -- includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        -- includeInlayFunctionParameterTypeHints = true,
-        -- includeInlayVariableTypeHints = true,
-        -- includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-        -- includeInlayPropertyDeclarationTypeHints = true,
-        -- includeInlayFunctionLikeReturnTypeHints = true,
-        -- includeInlayEnumMemberValueHints = true,
-        -- },
-        -- },
-        -- },
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
       },
       lua_ls = {
         -- cmd = {...},

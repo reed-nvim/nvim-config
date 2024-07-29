@@ -15,8 +15,8 @@ return {
       dashboard.button('s', '  Side bar', ':Neotree toggle<CR>'),
       dashboard.button('q', '󰿅  Quit', ':qa<CR>'),
     }
-    dashboard.section.header.val = require('configs.alpha-nvim')['random']
-    -- dashboard.section.header.val = require('configs.alpha-nvim')['vim']
+    -- dashboard.section.header.val = require('configs.alpha-nvim')['random']
+    dashboard.section.header.val = require('configs.alpha-nvim')['pacman']
     alpha.setup(dashboard.opts)
   end,
 }
