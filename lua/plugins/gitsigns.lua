@@ -42,20 +42,15 @@ return {
         end, { desc = 'Jump to previous git [c]hange' })
 
         -- Actions
-        map('v', '<leader>grh', function()
-          gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'reset git hunk' })
-
-        -- Actions
         -- normal mode
-        map('n', '<leader>grh', gitsigns.reset_hunk)
-        map('v', '<leader>grh', function()
+        map('n', '<leader>rh', gitsigns.reset_hunk)
+        map('v', '<leader>rh', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end)
-        map('n', '<leader>grb', gitsigns.reset_buffer)
-        map('n', '<leader>gph', gitsigns.preview_hunk)
-        map('n', '<leader>gdt', gitsigns.diffthis)
-        map('n', '<leader>gtd', gitsigns.toggle_deleted)
+        map('n', '<leader>rb', gitsigns.reset_buffer)
+        map('n', '<leader>ph', gitsigns.preview_hunk)
+        map('n', '<leader>dt', gitsigns.diffthis)
+        map('n', '<leader>td', gitsigns.toggle_deleted)
 
         map('n', '<leader>hD', function()
           gitsigns.diffthis '@'

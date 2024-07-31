@@ -24,6 +24,9 @@ vim.keymap.set('n', '<leader>ef', ':Neotree toggle float<cr>', { desc = 'open Ne
 vim.keymap.set('n', '<leader>eg', ':Neotree float git_status<cr>', { desc = 'open git_status in floating Neotree' })
 vim.keymap.set('n', '<leader>eb', ':Neotree toggle bottom<cr>', { desc = 'open Neotree from the bottom of the screen' })
 
+-- vim.keymap.set('n', '<leader>th', require('fzf-lua').files, { desc = 'Fzf Files' })
+-- vim.keymap.set('n', '<c-P>', require('fzf-lua').files, { desc = 'Fzf Files' })
+
 -- Opening LazyGit
 vim.keymap.set('n', '<leader>lg', ':LazyGit<cr>', { desc = 'LazyGit' })
 
