@@ -6,12 +6,12 @@ vim.opt.number = true
 -- You can also add relative line numbers
 vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 -- Enable break indent
 vim.opt.breakindent = true
 -- Save undo history
@@ -20,7 +20,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 -- Decrease update time
 vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
@@ -33,9 +33,9 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
@@ -43,4 +43,4 @@ vim.opt.scrolloff = 5
 -- Disables line wrapping
 vim.o.wrap = false
 
-vim.o.backspace = 'indent,eol,start' --allow backspace on indent, end of line or insert mode start position
+vim.o.backspace = "indent,eol,start" --allow backspace on indent, end of line or insert mode start position

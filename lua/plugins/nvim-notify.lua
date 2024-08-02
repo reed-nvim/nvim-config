@@ -1,13 +1,13 @@
 return {
-  'rcarriga/nvim-notify',
+  "rcarriga/nvim-notify",
   config = function()
-    require('notify').setup {
+    require("notify").setup {
       -- Configuration options
-      stages = 'fade',
+      stages = "fade",
       timeout = 3000,
-      background_colour = 'Normal',
+      background_colour = "Normal",
       -- Add other options here
     }
-    vim.notify = require 'notify'
+    vim.notify = require "notify"
   end,
 }

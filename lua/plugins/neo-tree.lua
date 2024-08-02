@@ -1,14 +1,14 @@
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 return {
-  'nvim-neo-tree/neo-tree.nvim',
-  branch = 'v3.x',
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-    'MunifTanjim/nui.nvim',
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
   },
-  cmd = 'Neotree',
+  cmd = "Neotree",
   lazy = false,
   opts = {
     close_if_last_window = true,
@@ -17,15 +17,15 @@ return {
       -- filter using buffer options
       bo = {
         -- if the file type is one of following, the window will be ignored
-        filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
+        filetype = { "neo-tree", "neo-tree-popup", "notify" },
         -- if the buffer type is one of following, the window will be ignored
-        buftype = { 'terminal', 'quickfix' },
+        buftype = { "terminal", "quickfix" },
       },
     },
     {
       window = {
         mappings = {
-          ['P'] = { 'toggle_preview', config = { use_float = false, use_image_nvim = true } },
+          ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
         },
       },
     },
@@ -35,41 +35,41 @@ return {
         padding = 1, -- extra padding on left hand side
         -- indent guides
         with_markers = true,
-        indent_marker = '│',
-        last_indent_marker = '└',
-        highlight = 'NeoTreeIndentMarker',
+        indent_marker = "│",
+        last_indent_marker = "└",
+        highlight = "NeoTreeIndentMarker",
         -- expander config, needed for nesting files
         with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
-        expander_collapsed = '',
-        expander_expanded = '',
-        expander_highlight = 'NeoTreeExpander',
+        expander_collapsed = "",
+        expander_expanded = "",
+        expander_highlight = "NeoTreeExpander",
       },
       icon = {
-        default = '*',
-        highlight = 'NeoTreeFileIcon',
+        default = "*",
+        highlight = "NeoTreeFileIcon",
       },
       modified = {
-        symbol = '👀  ',
-        highlight = 'NeoTreeModified',
+        symbol = "👀  ",
+        highlight = "NeoTreeModified",
       },
       git_status = {
         symbols = {
           -- Change type
-          modified = '󰩔  ',
+          modified = "󰩔  ",
           -- Status type
-          conflict = '🔥 ',
-          untracked = '  ',
+          conflict = "🔥 ",
+          untracked = "  ",
           -- Change type
-          added = '', -- or "✚", but this is redundant info if you use git_status_colors on the name
+          added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
           -- modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-          deleted = '  ', -- this can only be used in the git_status source
-          renamed = '󰁕  ', -- this can only be used in the git_status source
+          deleted = "  ", -- this can only be used in the git_status source
+          renamed = "󰁕  ", -- this can only be used in the git_status source
           -- Status type
           -- untra cked = "",
           -- conflict  = "",
-          ignored = '  ',
-          unstaged = '',
-          staged = '',
+          ignored = "  ",
+          unstaged = "",
+          staged = "",
         },
       },
     },
@@ -79,11 +79,11 @@ return {
         hide_dotfiles = false,
         hide_gitignored = false,
         never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-          '.DS_Store',
+          ".DS_Store",
           -- '.git/*',
           -- '.git',
-          '.aws-sam',
-          '.vscode',
+          ".aws-sam",
+          ".vscode",
         },
       },
       follow_current_file = {

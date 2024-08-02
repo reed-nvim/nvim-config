@@ -1,6 +1,6 @@
 return {
-  'navarasu/onedark.nvim',
-  name = 'onedark',
+  "navarasu/onedark.nvim",
+  name = "onedark",
   priority = 1000,
   lazy = false,
   ops = {},

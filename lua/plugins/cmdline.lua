@@ -1,32 +1,32 @@
 return {
-  'VonHeikemen/fine-cmdline.nvim',
+  "VonHeikemen/fine-cmdline.nvim",
   dependencies = {
-    { 'MunifTanjim/nui.nvim' },
+    { "MunifTanjim/nui.nvim" },
   },
   opts = {
     cmdline = {
       enable_keymaps = true,
       smart_history = true,
-      prompt = '  : ',
+      prompt = "  : ",
     },
     popup = {
       position = {
-        row = '10%',
-        col = '50%',
+        row = "10%",
+        col = "50%",
       },
       size = {
-        width = '50%',
+        width = "50%",
       },
       border = {
-        style = 'single',
+        style = "single",
         text = {
           -- top = 'Give it to me',
-          top = '󰮯  CMD  󰮯',
-          top_align = 'center',
+          top = "󰮯  CMD  󰮯",
+          top_align = "center",
         },
       },
       win_options = {
-        winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+        winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
       },
     },
   },
