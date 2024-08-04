@@ -11,54 +11,30 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- Function to check if any normal buffers are open
-local function close_aerial_if_no_buffers()
-  local open_buffers = vim.fn.getbufinfo { buflisted = 1 }
-  local normal_buffers = 0
-  for _, buf in ipairs(open_buffers) do
-    if vim.bo[buf.bufnr].buftype == "" then
-      normal_buffers = normal_buffers + 1
-    end
-  end
-  if normal_buffers == 0 then
-    vim.cmd "AerialClose"
-  end
-end
+local aerial = require "aerial"
 
-local function close_aerial_if_focus_is_neotree()
+local function close_aerial_if_insufficient_num_of_symbols_available()
   local current_buf = vim.api.nvim_get_current_buf()
-  local buf_filetype = vim.bo[current_buf].filetype
-
-  -- Close Aerial if the focused buffer is Neotree
-  if buf_filetype == "neo-tree" then
+  local num_symbols = aerial.num_symbols(current_buf)
+  if aerial.is_open() and num_symbols < 4 then
     vim.cmd "AerialClose"
   end
 end
 
--- Function to check if the only remaining buffer is Neotree
-local function close_aerial_if_only_neotree()
-  local open_buffers = vim.fn.getbufinfo { buflisted = 1 }
-  local normal_buffers = 0
-  local neotree_buffers = 0
+-- Auto command to run the function when entering a buffer
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.defer_fn(function()
+      close_aerial_if_insufficient_num_of_symbols_available()
+    end, 50)
+  end,
+})
 
-  for _, buf in ipairs(open_buffers) do
-    if vim.bo[buf.bufnr].buftype == "" then
-      normal_buffers = normal_buffers + 1
-    elseif vim.bo[buf.bufnr].filetype == "neo-tree" then
-      neotree_buffers = neotree_buffers + 1
-    end
-  end
-
-  -- Close Aerial if there are no normal buffers and only Neotree is open
-  if normal_buffers == 0 and neotree_buffers > 0 then
-    vim.cmd "AerialClose"
-  end
-
-  close_aerial_if_no_buffers()
-  close_aerial_if_focus_is_neotree()
-end
-
--- Auto command to run the function when a buffer is closed
-vim.api.nvim_create_autocmd("BufDelete", {
-  callback = close_aerial_if_only_neotree,
+-- Auto command to run the function when opening a buffer
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  callback = function()
+    vim.defer_fn(function()
+      close_aerial_if_insufficient_num_of_symbols_available()
+    end, 50)
+  end,
 })

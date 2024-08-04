@@ -32,30 +32,6 @@ return {
         vim.keymap.set("n", "]s", "<cmd>AerialNext<cr>", { buffer = bufnr })
       end,
     }
-
-    -- Function to print the number of symbols in the current buffer
-    local function close_if_no_symbols_available()
-      local current_buf = vim.api.nvim_get_current_buf()
-
-      -- Get the number of symbols for the current buffer
-      local num_symbols = aerial.num_symbols(current_buf)
-
-      -- Print the number of symbols
-      -- print('Number of symbols in current buffer: ' .. num_symbols)
-      if num_symbols == 0 then
-        vim.cmd "AerialClose"
-      end
-    end
-
-    -- Auto command to run the function when entering a buffer
-    vim.api.nvim_create_autocmd("BufEnter", {
-      callback = close_if_no_symbols_available,
-    })
-
-    -- Auto command to run the function when opening a buffer
-    vim.api.nvim_create_autocmd("BufWinEnter", {
-      callback = close_if_no_symbols_available,
-    })
   end,
   lazy = false,
   event = "VeryLazy",
