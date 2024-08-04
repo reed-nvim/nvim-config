@@ -5,20 +5,16 @@ return {
   config = function()
     require("lualine").setup {
       options = {
-        -- theme = "dracula",
+        theme = "dracula",
         -- theme = "horizon",
-        theme = "iceberg_dark",
+        -- theme = "iceberg_dark",
         -- theme = "material",
-        -- theme = "molokai",
-        -- theme = "nightfly",
-        -- theme = "palenight",
         -- theme = "ayu_dark",
         -- theme = "ayu_mirage",
-        -- theme = "moonfly",
         -- theme = "wombat",
         component_separators = "",
         disabled_filetypes = {
-          statusline = { "neo-tree" },
+          statusline = { "neo-tree", "aerial" },
           winbar = { "neo-tree" },
         },
       },
