@@ -15,7 +15,7 @@ return {
       open_automatic = true,
       highlight_on_hover = false,
       ignore = {
-        filetypes = { "neo-tree", "aerial" },
+        filetypes = { "neo-tree", "aerial", "oil" },
       },
       close_automatic_events = { "unsupported", "switch_buffer", "unfocus" },
       -- attach_mode = 'window',
