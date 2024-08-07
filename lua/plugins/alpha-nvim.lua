@@ -16,7 +16,8 @@ return {
       dashboard.button("q", "󰿅  Quit", ":qa<CR>"),
     }
     -- dashboard.section.header.val = require('configs.alpha-nvim')['random']
-    dashboard.section.header.val = require("configs.alpha-nvim")["pacman"]
+    -- dashboard.section.header.val = require("configs.alpha-nvim")["pacman"]
+    dashboard.section.header.val = require("configs.alpha-nvim")["vim"]
     alpha.setup(dashboard.opts)
   end,
 }
