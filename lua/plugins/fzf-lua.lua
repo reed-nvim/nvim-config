@@ -154,7 +154,7 @@ return {
         fzf_lua.diagnostics_workspace()
       end, { desc = "Search Workspace Diagnostics" })
 
-      vim.keymap.set("n", "<leader>sr", function()
+      vim.keymap.set("n", "<leader><leader>", function()
         fzf_lua.resume()
       end, { desc = "Resume Last Fzf-Lua Picker" })
 

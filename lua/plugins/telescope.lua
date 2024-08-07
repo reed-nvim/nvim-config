@@ -168,7 +168,7 @@ return {
       -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       -- vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       -- vim.keymap.set('n', '<leader>fe', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-      vim.keymap.set("n", "<leader><leader>", builtin.resume, { desc = "[S]earch [R]esume" })
+      -- vim.keymap.set("n", "<leader><leader>", builtin.resume, { desc = "[S]earch [R]esume" })
       -- vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
