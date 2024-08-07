@@ -4,7 +4,7 @@ return {
   priority = 1000,
   lazy = false,
   ops = {},
-  -- config = function()
-  --   vim.cmd.colorscheme("kanagawa")
-  -- end,
+  config = function()
+    vim.cmd.colorscheme "kanagawa"
+  end,
 }
