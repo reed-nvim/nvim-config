@@ -1,7 +1,7 @@
 -- [[NOTE: Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 --  clear highlighted search on pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", ":nohlsearch<cr>")
 -- Quick move back to insert mode
 vim.keymap.set("i", "jk", "<Esc>")
 
@@ -33,20 +33,20 @@ vim.keymap.set({ "n", "x" }, "<c-l>", ":TmuxNavigateRight<cr>")
 vim.keymap.set({ "n", "x" }, "<c-\\>", ":TmuxNavigatePrevious<cr>")
 
 -- Keybindings for bufferline
-vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>xo", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true, desc = "close all other visible buffers" })
+vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>xo", ":BufferLineCloseOthers<cr>", { noremap = true, silent = true, desc = "close all other visible buffers" })
 vim.api.nvim_set_keymap("n", "<leader>w", ":Bdelete<cr>", { noremap = true, silent = true, desc = "close current buffer" })
 vim.api.nvim_set_keymap(
   "n",
   "<leader>xr",
-  ":BufferLineCloseRight<CR>",
+  ":BufferLineCloseRight<cr>",
   { noremap = true, silent = true, desc = "close all visible buffers to the right of the current buffer" }
 )
 vim.api.nvim_set_keymap(
   "n",
   "<leader>xl",
-  ":BufferLineCloseLeft<CR>",
+  ":BufferLineCloseLeft<cr>",
   { noremap = true, silent = true, desc = "close all visible buffers to the left of the current buffer" }
 )
 
