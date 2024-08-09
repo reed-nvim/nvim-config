@@ -36,6 +36,7 @@ vim.keymap.set({ "n", "x" }, "<c-\\>", ":TmuxNavigatePrevious<cr>")
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>xo", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true, desc = "close all other visible buffers" })
+vim.api.nvim_set_keymap("n", "<leader>w", ":Bdelete<cr>", { noremap = true, silent = true, desc = "close current buffer" })
 vim.api.nvim_set_keymap(
   "n",
   "<leader>xr",
