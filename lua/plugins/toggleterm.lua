@@ -10,7 +10,7 @@ return {
       direction = "float",
       float_opts = {
         border = "curved",
-        winblend = 4,
+        -- winblend = 4,
         highlights = {
           -- Custom highlights to match your theme
           border = "FzfLuaBorder", -- Using the same border color as fzf-lua
