@@ -14,7 +14,13 @@ return {
         -- theme = "wombat",
         component_separators = "",
         disabled_filetypes = {
-          statusline = { "neo-tree", "aerial" },
+          statusline = {
+            "neo-tree",
+            "aerial",
+            "DiffviewFiles",
+            "DiffviewFiles",
+            "DiffviewFileHistory",
+          },
           winbar = { "neo-tree" },
         },
       },

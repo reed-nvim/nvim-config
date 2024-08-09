@@ -60,7 +60,7 @@ return {
         end)
         map("n", "<leader>rb", gitsigns.reset_buffer)
         map("n", "<leader>ph", gitsigns.preview_hunk)
-        map("n", "<leader>dt", gitsigns.diffthis)
+        -- map("n", "<leader>dt", gitsigns.diffthis)
         map("n", "<leader>td", gitsigns.toggle_deleted)
 
         map("n", "<leader>hD", function()
