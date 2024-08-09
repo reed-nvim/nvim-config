@@ -1,7 +1,6 @@
 -- [[NOTE: Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+--  clear highlighted search on pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 -- Quick move back to insert mode
 vim.keymap.set("i", "jk", "<Esc>")
@@ -37,7 +36,6 @@ vim.keymap.set({ "n", "x" }, "<c-\\>", ":TmuxNavigatePrevious<cr>")
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>xo", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true, desc = "close all other visible buffers" })
-vim.api.nvim_set_keymap("n", "<leader>xb", ":bdelete<CR>", { noremap = true, silent = true, desc = "close current buffer" })
 vim.api.nvim_set_keymap(
   "n",
   "<leader>xr",
@@ -51,13 +49,5 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "close all visible buffers to the left of the current buffer" }
 )
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---  See `:help wincmd` for a list of all window commands
--- vim.keymap.set('n', '<c-h>', '<c-w><c-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<c-l>', '<c-w><c-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<c-j>', '<c-w><c-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<c-k>', '<c-w><c-k>', { desc = 'Move focus to the upper window' })
-
 -- shortcuts
--- '<c-w>=' :  make splits equal (native keybinding)
+-- '<c-w> =' :  make splits equal (native keybinding)

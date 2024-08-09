@@ -42,5 +42,6 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 5
 -- Disables line wrapping
 vim.o.wrap = false
-
+-- Set highlight on search
+vim.opt.hlsearch = true
 vim.o.backspace = "indent,eol,start" --allow backspace on indent, end of line or insert mode start position
