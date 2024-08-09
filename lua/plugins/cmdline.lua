@@ -21,7 +21,7 @@ return {
         style = "single",
         text = {
           -- top = 'Give it to me',
-          top = "󰮯  CMD  󰮯",
+          top = "󰮯  CMD  󰮯 ",
           top_align = "center",
         },
       },
