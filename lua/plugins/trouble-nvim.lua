@@ -1,12 +1,38 @@
 return {
   "folke/trouble.nvim",
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
+  lazy = false,
+  opts = {
+    test = {
+      mode = "diagnostics",
+      preview = {
+        type = "split",
+        relative = "win",
+        position = "right",
+        size = 0.3,
+      },
+    },
+    modes = {
+      diagnostics = {
+        auto_open = true,
+        auto_close = true,
+      },
+      symbols = {
+        auto_open = true,
+        auto_close = true,
+      },
+    },
+  },
   keys = {
     {
       "<leader>xx",
       "<cmd>Trouble diagnostics toggle<cr>",
       desc = "Diagnostics (Trouble)",
+    },
+    {
+      "<leader>ft",
+      "<cmd>Trouble todo<cr>",
+      desc = "Todos in Trouble",
     },
     {
       "<leader>xX",

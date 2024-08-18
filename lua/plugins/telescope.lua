@@ -172,7 +172,7 @@ return {
       -- vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set({ "n", "x" }, "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "open TODOs in Telescope" })
+      -- vim.keymap.set({ "n", "x" }, "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "open TODOs in Telescope" })
       -- Slightly advanced example of overriding default behavior and theme
       -- vim.keymap.set('n', '<leader>fb', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
