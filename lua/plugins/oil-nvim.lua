@@ -35,38 +35,6 @@ return {
           return name == ".." or name == ".git" or name == ".node_modules"
         end,
       },
-      -- Configuration for the floating window in oil.open_float
-      float = {
-        -- Padding around the floating window
-        padding = 2,
-        max_width = 0,
-        max_height = 0,
-        border = "rounded",
-        win_options = {
-          winblend = 0,
-        },
-        -- preview_split: Split direction: "auto", "left", "right", "above", "below".
-        preview_split = "auto",
-        -- This is the config that will be passed to nvim_open_win.
-        -- Change values here to customize the layout
-        override = function(conf)
-          return conf
-        end,
-      },
-      -- Configuration for the floating progress window
-      progress = {
-        max_width = 0.9,
-        min_width = { 40, 0.4 },
-        width = nil,
-        max_height = { 10, 0.9 },
-        min_height = { 5, 0.1 },
-        height = nil,
-        border = "rounded",
-        minimized_border = "none",
-        win_options = {
-          winblend = 0,
-        },
-      },
     }
   end,
 }
