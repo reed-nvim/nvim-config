@@ -65,6 +65,8 @@ return { -- Autocompletion
         },
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<c-j>"] = cmp.mapping.select_next_item(),
+        ["<c-k>"] = cmp.mapping.select_prev_item(),
 
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display
