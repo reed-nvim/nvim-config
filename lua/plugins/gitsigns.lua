@@ -25,6 +25,7 @@ return {
       current_line_blame_formatter = " Blame <author>, <author_time:%R>: <summary>",
       signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
       numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+
       linehl = true, -- Toggle with `:Gitsigns toggle_linehl`
       on_attach = function(bufnr)
         local gitsigns = require "gitsigns"
@@ -62,7 +63,7 @@ return {
         map("n", "<leader>ph", gitsigns.preview_hunk)
         -- map("n", "<leader>dt", gitsigns.diffthis)
         map("n", "<leader>td", gitsigns.toggle_deleted)
-
+        map("n", "<leader>tlh", ":Gitsigns toggle_linehl<cr>")
         map("n", "<leader>hD", function()
           gitsigns.diffthis "@"
         end, { desc = "git [D]iff against last commit" })
