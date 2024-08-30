@@ -45,3 +45,10 @@ vim.o.wrap = false
 -- Set highlight on search
 vim.opt.hlsearch = true
 vim.o.backspace = "indent,eol,start" --allow backspace on indent, end of line or insert mode start position
+
+-- hides the vim command line when its not in use
+vim.o.ls = 0
+vim.o.ch = 0
+
+-- will spell check comments (spelling errors will be underlined)
+vim.o.spell = true
