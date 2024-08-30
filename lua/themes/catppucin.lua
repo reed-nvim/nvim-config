@@ -5,6 +5,6 @@ return {
   lazy = false,
   ops = {},
   config = function()
-    vim.cmd.colorscheme "catppuccin-macchiato"
+    -- vim.cmd.colorscheme "catppuccin-macchiato"
   end,
 }
