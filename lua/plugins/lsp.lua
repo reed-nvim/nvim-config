@@ -210,7 +210,7 @@ return { -- LSP Configuration & Plugins
       tsserver = {
         -- Disable formatting for tsserver (JavaScript/TypeScript)
         on_attach = function(client, bufnr)
-          disable_formatting(client)
+          -- disable_formatting(client)
         end,
         settings = {
           typescript = {
