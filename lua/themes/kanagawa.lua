@@ -5,6 +5,6 @@ return {
   lazy = false,
   ops = {},
   config = function()
-    -- vim.cmd.colorscheme "kanagawa"
+    -- vim.cmd.colorscheme "kanagawa-wave"
   end,
 }
