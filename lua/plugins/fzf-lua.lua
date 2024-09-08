@@ -158,6 +158,9 @@ return {
         fzf_lua.resume()
       end, { desc = "Resume Last Fzf-Lua Picker" })
 
+      vim.keymap.set({ "n", "x" }, "<leader>vm", ":FzfLua marks<cr>", { desc = "View all marks", silent = true })
+      vim.keymap.set({ "n", "x" }, "<leader>dm", ":delmarks!<cr>", { desc = "Delete all marks", silent = true })
+
       vim.keymap.set("n", "<leader>fn", function()
         fzf_lua.files { cwd = vim.fn.stdpath "config" }
       end, { desc = "Find Neovim Config Files" })
