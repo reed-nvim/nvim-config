@@ -12,5 +12,9 @@ return {
       cmake_dap_configuration = { name = "cpp", type = "codelldb", request = "launch" },
       cmake_dap_open_command = require("dap").repl.open,
     }
+
+    vim.keymap.set({ "n", "v" }, "<leader>cb", ":CMakeBuild<cr>")
+    vim.keymap.set({ "n", "v" }, "<leader>cr", ":CMakeRun<cr>")
+    vim.keymap.set({ "n", "v" }, "<leader>cs", ":CMakeStopRunner<cr>")
   end,
 }

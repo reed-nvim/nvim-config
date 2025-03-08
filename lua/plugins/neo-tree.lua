@@ -10,6 +10,12 @@ return {
   },
   cmd = "Neotree",
   lazy = false,
+  config = function()
+    -- Opening Neotree
+    vim.keymap.set("n", "<leader>el", ":Neotree toggle left<cr>", { desc = "open Neotree on the left" })
+    vim.keymap.set("n", "<leader>ef", ":Neotree toggle float<cr>", { desc = "open Neotree in float position" })
+    vim.keymap.set("n", "<leader>er", ":Neotree reveal float<cr>", { desc = "reveal current File in Neotree" })
+  end,
   opts = {
     close_if_last_window = true,
     filter_rules = {

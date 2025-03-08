@@ -154,6 +154,12 @@ return {
         fzf_lua.diagnostics_workspace()
       end, { desc = "Search Workspace Diagnostics" })
 
+      vim.keymap.set("n", "<leader>fs", function()
+        fzf_lua.grep_cword()
+      end, { desc = "Search word under cursor" })
+
+      vim.keymap.set("n", "<leader>fj", ":FzfLua jumps<cr>", { desc = "Find jumps" })
+
       vim.keymap.set("n", "<leader><leader>", function()
         fzf_lua.resume()
       end, { desc = "Resume Last Fzf-Lua Picker" })

@@ -10,7 +10,7 @@ return {
         left_mouse_command = "buffer %d",
         indicator_icon = "▎",
         buffer_close_icon = "",
-        modified_icon = "👀",
+        modified_icon = "👁️",
         close_icon = "",
         -- left_trunc_marker = "",
         -- right_trunc_marker = "",
@@ -32,5 +32,26 @@ return {
         sort_by = "id",
       },
     }
+
+    -- Keybindings for bufferline
+    -- vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<cr>", { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap("n", "<leader>w", ":Bdelete<cr>", { noremap = true, silent = true, desc = "close current buffer" })
+    -- vim.api.nvim_set_keymap("n", "<leader>tn", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", ",", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "<leader>tp", ":BufferLineCyclePrev<cr>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "<leader>xo", ":BufferLineCloseOthers<cr>", { noremap = true, silent = true, desc = "close all other visible buffers" })
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>xr",
+      ":BufferLineCloseRight<cr>",
+      { noremap = true, silent = true, desc = "close all visible buffers to the right of the current buffer" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>xl",
+      ":BufferLineCloseLeft<cr>",
+      { noremap = true, silent = true, desc = "close all visible buffers to the left of the current buffer" }
+    )
   end,
 }
